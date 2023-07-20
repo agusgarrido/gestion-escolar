@@ -160,9 +160,3 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 DJANGO_SUPERUSER_USERNAME = os.getenv('DJANGO_SUPERUSER_USERNAME', 'default_username')
 DJANGO_SUPERUSER_PASSWORD = os.getenv('DJANGO_SUPERUSER_PASSWORD', 'default_password')
-
-superuser_1, _ = User.objects.get_or_create(username=DJANGO_SUPERUSER_USERNAME)
-superuser_1.set_password(DJANGO_SUPERUSER_PASSWORD)
-superuser_1.is_superuser = True
-superuser_1.is_staff = True
-superuser_1.save()
