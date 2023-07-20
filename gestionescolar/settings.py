@@ -85,7 +85,7 @@ WSGI_APPLICATION = 'gestionescolar.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-'''DATABASES = {
+DATABASES = {
     'default':{
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'gestion_escolar',
@@ -94,14 +94,14 @@ WSGI_APPLICATION = 'gestionescolar.wsgi.application'
         'HOST': 'localhost',
         'PORT': '5432',
     }
-}'''
+}
 
-DATABASES = {
+'''DATABASES = {
     'default': dj_database_url.config(
         default='postgresql://postgres:postgres@localhost/postgres',
         conn_max_age=600
     )
-}
+}'''
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
