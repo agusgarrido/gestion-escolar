@@ -11,10 +11,11 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 from pathlib import Path
+from dotenv import load_dotenv
 import os
 import dj_database_url
 
-#print(os.environ)
+load_dotenv()
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -98,7 +99,7 @@ WSGI_APPLICATION = 'gestionescolar.wsgi.application'
 }'''
 
 DATABASES = {
-    'default': dj_database_url.parse('postgres://gestion_escolar_psql_user:ntlNjx40fTHBuSmlXdcAFRSIZxtdXRdn@dpg-cis9dkliuie5eb8rbrp0-a.oregon-postgres.render.com/gestion_escolar_psql')
+    "default": dj_database_url.parse(os.getenv('DATABASE_URL'))
 }
 
 
