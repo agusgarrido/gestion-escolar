@@ -13,6 +13,7 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 from pathlib import Path
 import os
 import dj_database_url
+from django.contrib.auth.models import User
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -105,6 +106,12 @@ DATABASES = {
 
 DJANGO_SUPERUSER_USERNAME = os.getenv('DJANGO_SUPERUSER_USERNAME', 'default_username')
 DJANGO_SUPERUSER_PASSWORD = os.getenv('DJANGO_SUPERUSER_PASSWORD', 'default_password')
+
+superuser_1, _ = User.objects.get_or_create(username=DJANGO_SUPERUSER_USERNAME)
+superuser_1.set_password(DJANGO_SUPERUSER_PASSWORD)
+superuser_1.is_superuser = True
+superuser_1.is_staff = True
+superuser_1.save()
 
 # Password validation
 # https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
