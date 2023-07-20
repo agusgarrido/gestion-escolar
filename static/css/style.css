@@ -1,0 +1,105 @@
+.header {
+    height: 7vh;
+    background-color: #052C65;
+}
+
+#sidebar {
+    background-color: #F9F9F9;
+}
+
+#main-content,
+.login-container {
+    background-image: url('/static/src/fondo_principal.jpg');
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.sidebar-content {
+    height: 93vh;
+}
+
+.content-box {
+    width: 90%;
+    height: 500px;
+}
+
+.encabezado-tabla {
+    background-color: #052C65;
+    color: #F9F9F9;
+}
+
+.encabezado-contenido {
+    margin: 0px;
+}
+
+.table {
+    color: #052C65;
+}
+
+.button {
+    background-color: #052C65;
+    border: none;
+    color: #F9F9F9;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: #084298;
+    color: white;
+}
+
+.button-filter {
+    background-color: #084298;
+    border: none;
+    color: #F9F9F9;
+    text-decoration: none;
+}
+
+.button-filter:hover {
+    background-color: #1953a9;
+    color: white;
+}
+
+.tabla {
+    background-color: white;
+}
+
+.tabla-docente {
+    background-color: white;
+    height: 90%;
+}
+
+.sidebar-button {
+    width: 250px;
+    height: 40px;
+    border-radius: 25px;
+    margin-bottom: 20px;
+}
+
+.form-button {
+    width: 150px;
+    height: 40px;
+    border-radius: 25px;
+    margin: 20px;
+}
+
+.image-box {
+    background-color: #084298;
+    border-radius: 50%;
+    width: 250px;
+    height: 250px;
+    margin-bottom: 20px;
+}
+
+.profile-image {
+    width: 200px;
+    height: 200px;
+}
+
+#id_fecha_nacimiento,
+#id_ingreso_cargo,
+#id_curso {
+    width: 189px;
+}

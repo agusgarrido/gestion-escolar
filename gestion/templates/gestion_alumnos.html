@@ -1,0 +1,51 @@
+{% extends 'gestion.html' %}
+
+{% block title %} <h4>GESTIÓN DE ALUMNOS</h4> {% endblock %}
+
+{% block content %}
+<div class="row encabezado-tabla">
+    <div class="col-lg-6">
+        <h4 class="encabezado-contenido">Alumnos</h4>
+    </div>
+    <div class="col-lg-6">
+        <form method="get" class="d-flex align-items-center justify-content-end">
+            {{alumnos.form}}
+            <button class=" btn btn-sm ms-2 button-filter" type="submit">Filtrar</button>
+        </form>
+    </div>
+</div>
+<div class="row tabla table-responsive">
+    <table id='tablaAsignaturas' class="display" style="width: 100%;">
+        <thead>
+            <tr>
+                <td>Nombre</td>
+                <td>Documento</td>
+                <td>Nacimiento</td>
+                <td>Curso</td>
+                <td></td>
+                <td></td>
+            </tr>
+        </thead>
+        <tbody>
+            {% for alumno in alumnos.qs %}
+            <tr>
+                <td>{{alumno.nombre}} {{alumno.apellido}}</td>
+                <td>{{alumno.documento}}</td>
+                <td>{{alumno.fecha_nacimiento}}</td>
+                <td>{{alumno.curso}}</td>
+                <td>
+                    <a class="btn button" href="{% url 'editar_alumno' alumno.id %}">Editar</a>
+                </td>
+                <td>
+                    <a type="button" class="btn button" href="{% url 'eliminar_alumno' alumno.id %}">Eliminar</a>
+                </td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
+<div class=" row">
+    <a class=" btn button" href="{% url 'agregar_alumno'%}">Agregar</a>
+</div>
+
+{% endblock %}

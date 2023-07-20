@@ -1,0 +1,48 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ingreso</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <div class="container-fluid login-container vh-100 d-flex justify-content-center align-items-center">
+        <div class="container d-flex justify-content-center align-items-center" style="background-color: white;">
+            <div class="col-lg-3 mx-0 my-5">
+                <div class="row mb-4 d-flex justify-content-center align-items-center">
+                    <div class="col text-center">
+                        <h2>Ingresar al sitio</h2>
+                    </div>
+                </div>
+                <form id="form-login" method="POST">
+                    {% csrf_token %}
+                    <div class="row mb-4 d-flex align-items-center justify-content-center">
+                        <div class="col text-center">
+                            {{form.username}}
+                        </div>
+                    </div>
+                    <div class="row mb-4 d-flex align-items-center justify-content-center">
+                        <div class="col text-center">
+                            {{form.password}}
+                        </div>
+                    </div>
+                    <div class="row mb-4">
+                        <div class="col text-center">
+                            <button type="submit" class="btn button">Ingresar</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
