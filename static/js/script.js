@@ -516,10 +516,3 @@ $(document).ready(function () {
         "bLengthChange": false,
     })
   });
-
-function eliminarRegistro() {
-        var btnEliminar = document.getElementById('btnEliminar');
-        var urlEliminar = btnEliminar.getAttribute('data-href');
-        console.log("URL de eliminación:", urlEliminar);
-        window.location.href = urlEliminar;
-    }
