@@ -11,31 +11,15 @@
 </head>
 
 <body>
-    <div class="container-fluid login-container vh-100 d-flex justify-content-center align-items-center">
-        <div class="container d-flex justify-content-center align-items-center" style="background-color: white;">
-            <div class="col-lg-3 mx-0 my-5">
-                <div class="row mb-4 d-flex justify-content-center align-items-center">
-                    <div class="col text-center">
-                        <h2>Ingresar al sitio</h2>
-                    </div>
-                </div>
-                <form id="form-login" method="POST">
+    <div class="container-fluid login-container vh-100">
+        <div class="row vh-100 align-items-center">
+            <div class="col-md-4 offset-md-4 card card-body text-center">
+                <h2 class="mb-4">Ingresar al sitio</h2>
+                <form id="form-login" method="POST" class="">
                     {% csrf_token %}
-                    <div class="row mb-4 d-flex align-items-center justify-content-center">
-                        <div class="col text-center">
-                            {{form.username}}
-                        </div>
-                    </div>
-                    <div class="row mb-4 d-flex align-items-center justify-content-center">
-                        <div class="col text-center">
-                            {{form.password}}
-                        </div>
-                    </div>
-                    <div class="row mb-4">
-                        <div class="col text-center">
-                            <button type="submit" class="btn button">Ingresar</button>
-                        </div>
-                    </div>
+                    <div class="mb-4">{{form.username}}</div>
+                    <div class="mb-4">{{form.password}}</div>
+                    <div class="mb-4"><button type="submit" class="btn button">Ingresar</button></div>
                 </form>
             </div>
         </div>

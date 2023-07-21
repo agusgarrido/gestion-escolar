@@ -3,41 +3,45 @@
 {% block title %} <h4>GESTIÓN DE DOCENTES</h4> {% endblock %}
 
 {% block content %}
-<div class="row encabezado-tabla">
-    <h4 class="encabezado-contenido">Docentes</h4>
-</div>
-<div class="row tabla table-responsive">
-    <table id='tablaDocentes' class="display" style="width: 100%;">
-        <thead>
-            <tr>
-                <td>Nombre</td>
-                <td>Documento</td>
-                <td>Ingreso</td>
-                <td>Antigüedad</td>
-                <td></td>
-                <td></td>
-            </tr>
-        </thead>
-        <tbody>
-            {% for docente in docentes %}
-            <tr>
-                <td>{{docente.nombre}} {{docente.apellido}}</td>
-                <td>{{docente.documento}}</td>
-                <td>{{docente.fecha_nacimiento}}</td>
-                <td>{{docente.ingreso_cargo}}</td>
-                <td>
-                    <a class="btn button" href="{% url 'editar_docente' docente.id%}">Editar</a>
-                </td>
-                <td>
-                    <a type="button" class="btn button" href="{% url 'eliminar_docente' docente.id %}">Eliminar</a>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-</div>
-<div class=" row"">
-    <a class=" btn button" href="{% url 'agregar_docente'%}">Agregar</a>
-</div>
+<div class="container-fluid card card-body">
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <h4 class="text-white text-center encabezado-tabla">Docentes</h4>
+        </div>
+    </div>
+    <div class="row align-items-center">
+        <div class="col-md-12 table-responsive-lg">
+            <table id='tablaAsignaturas' class="display table table-striped" style="width: 100%;">
+                <thead>
+                    <tr>
+                        <td>Nombre</td>
+                        <td>Documento</td>
+                        <td>Ingreso</td>
+                        <td>Antigüedad</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for docente in docentes %}
+                    <tr>
+                        <td>{{docente.nombre}} {{docente.apellido}}</td>
+                        <td>{{docente.documento}}</td>
+                        <td>{{docente.fecha_nacimiento}}</td>
+                        <td>{{docente.ingreso_cargo}}</td>
+                        <td>
+                            <a class="btn button" href="{% url 'editar_docente' docente.id%}">Editar</a>
+                        </td>
+                        <td>
+                            <a type="button" class="btn button"
+                                href="{% url 'eliminar_docente' docente.id %}">Eliminar</a>
+                        </td>
+                    </tr>
+                    {% endfor %}
+                </tbody>
+            </table>
+        </div>
+        <a class=" button btn" href="{% url 'agregar_docente'%}">Agregar</a>
+    </div>
 
-{% endblock %}
+    {% endblock %}

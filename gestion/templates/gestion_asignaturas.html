@@ -2,44 +2,47 @@
 {% block title %} <h4>GESTIÓN DE ASIGNATURAS</h4> {% endblock %}
 
 {% block content %}
-<div class="row encabezado-tabla">
-    <div class="col-lg-6">
-        <h4 class="encabezado-contenido">Asignaturas</h4>
+<div class="container-fluid card card-body">
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <h4 class="text-white text-center encabezado-tabla">Asignaturas</h4>
+        </div>
+        <div class="col-md-6">
+            <form method="get" class="d-flex align-items-center justify-content-end">
+                {{asignaturas.form}}
+                <button class="btn btn-sm ms-2 button" type="submit">Filtrar</button>
+            </form>
+        </div>
     </div>
-    <div class="col-lg-6">
-        <form method="get" class="d-flex align-items-center justify-content-end">
-            {{asignaturas.form}}
-            <button class="btn btn-sm ms-2 button-filter" type="submit">Filtrar</button>
-        </form>
-    </div>
-</div>
-<div class="row tabla table-responsive">
-    <table id='tablaAsignaturas' class="display" style="width: 100%;">
-        <thead>
-            <tr>
-                <td>Asignatura</td>
-                <td>Docente</td>
-                <td>Curso</td>
-                <td></td>
-                <td></td>
-            </tr>
-        </thead>
-        <tbody>
-            {% for asignatura in asignaturas.qs %}
-            <tr>
-                <td>{{asignatura.asignatura}}</td>
-                <td>{{asignatura.docente}}</td>
-                <td>{{asignatura.curso}}</td>
-                <td>
-                    <a class="btn button" href="{% url 'editar_asignatura' asignatura.id%}">Editar</a>
-                </td>
-                <td>
-                    <a type="button" class="btn button" href="{% url 'eliminar_asignatura' asignatura.id%}"">Eliminar</a>
-                </td>
-            </tr>
-            {% endfor %}
-        </tbody>
-    </table>
-    <a class=" button btn" href="{% url 'agregar_asignatura'%}">Agregar</a>
-</div>
-{% endblock %}
+    <div class="row align-items-center">
+        <div class="col-md-12 table-responsive-md">
+            <table id='tablaAsignaturas' class="display table table-striped" style="width: 100%;">
+                <thead>
+                    <tr>
+                        <td>Asignatura</td>
+                        <td>Docente</td>
+                        <td>Curso</td>
+                        <td></td>
+                        <td></td>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% for asignatura in asignaturas.qs %}
+                    <tr>
+                        <td>{{asignatura.asignatura}}</td>
+                        <td>{{asignatura.docente}}</td>
+                        <td>{{asignatura.curso}}</td>
+                        <td>
+                            <a class="btn button" href="{% url 'editar_asignatura' asignatura.id%}">Editar</a>
+                        </td>
+                        <td>
+                            <a type="button" class="btn button" href="{% url 'eliminar_asignatura' asignatura.id%}"">Eliminar</a>
+                            </td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+        </div>
+        <a class=" button btn" href="{% url 'agregar_asignatura'%}">Agregar</a>
+        </div>
+        {% endblock %}
