@@ -1,6 +1,6 @@
 # Gestión Escolar - Web App
 
-Esta es una aplicación web desarrollada con Django, que permite manejar el alta, baja y actualización de docentes, asignaturas y alumnos, y establecer conexiones entre ellos. Esta aplicación surge desde mi necesidad como docente de tener una herramienta fácil de utilizar para administrar información significativa.
+Esta es una aplicación web desarrollada con Django, que permite manejar el alta, baja y actualización de docentes, asignaturas y alumnos, y establecer conexiones entre ellos. Esta aplicación surge desde mi necesidad como docente de tener una herramienta fácil de utilizar para administrar información significativa. 
 
 ## Características principales
 
@@ -11,18 +11,18 @@ Esta es una aplicación web desarrollada con Django, que permite manejar el alta
 
 ## Herramientas de desarrollo
 
-Python
-Django
-PostgreSQL
+1. Python
+2. Django
+3. PostgreSQL
 
 ## Uso
 
-Sitio web de prueba: https://gestion-escolar-django.onrender.com/
-Usuario de prueba: admin
-Contraseña de prueba: prueba1234
+1. Sitio web de prueba: https://gestion-escolar-django.onrender.com/
+2. Usuario de prueba: admin
+3. Contraseña de prueba: prueba1234
 
 ## Versiones
-v1.0.0: Versión inicial con funcionalidades básicas de gestión escolar.
+v1.0.0: Versión inicial con funcionalidades básicas de gestión escolar. (20/07/23)
 
 ## Contacto
 
